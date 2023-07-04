@@ -8,3 +8,5 @@ package-lock.json
 *.code-workspace
 .changelog
 .history
+.docusaurus
+build
