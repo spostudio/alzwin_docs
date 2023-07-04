@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Alzwin Docs',
-  tagline: 'Dinosaurs are cool',
+  title: '알츠윈 문서',
+  tagline: '가장 쉬운 대중 인지 건강 관리',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -28,8 +28,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'ko',
+    locales: ['en','ko'],
   },
 
   presets: [
@@ -41,15 +41,13 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -64,23 +62,37 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: '알츠윈 문서',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/book.png',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: '문서',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: '블로그', position: 'left'},
+          // {
+          //   href: 'https://github.com/facebook/docusaurus',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            type: 'localeDropdown',
             position: 'right',
+            dropdownItemsAfter: [
+              // {
+              //   type: 'html',
+              //   value: '<hr style="margin: 0.3rem 0;">',
+              // },
+              // {
+              //   href: 'https://alzwin.com',
+              //   label: 'Alzwin',
+              // },
+            ],
           },
         ],
       },
@@ -88,41 +100,33 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: '문서',
             items: [
               {
-                label: 'Tutorial',
+                label: '소개',
                 to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'Community',
+            title: '링크',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: '알츠윈',
+                href: 'https://alzwin.com',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: '세븐포인트원',
+                href: 'https://sevenptone.com',
               },
             ],
           },
           {
-            title: 'More',
+            title: '그외',
             items: [
               {
-                label: 'Blog',
+                label: '블로그',
                 to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
               },
             ],
           },
