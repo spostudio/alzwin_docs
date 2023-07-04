@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalzwin_doc=self.webpackChunkalzwin_doc||[]).push([[144],{5643:(e,a,l)=>{l.r(a),l.d(a,{default:()=>c});var n=l(7294),t=l(7961);function c(){return n.createElement(t.Z,null,n.createElement("h1",null,"My React page"),n.createElement("p",null,"This is a React page"))}}}]);
