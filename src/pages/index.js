@@ -30,8 +30,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}에 오신 것을 환영합니다`}
+      description="알츠윈 문서">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
