@@ -3,6 +3,8 @@ sidebar_position: 1
 ---
 
 # 시작하기
+이 웹사이트는 [Docusaurus 2](https://docusaurus.io/)를 사용하여 만들어졌습니다.
+
 ## 필요한 것들
 
 - [Node.js](https://nodejs.org/en/download/) 버전 16.14 이상:
