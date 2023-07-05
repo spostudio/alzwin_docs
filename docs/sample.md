@@ -3,4 +3,5 @@
 ## Next Headline
 
 * spo
-* <img width="535" alt="스크린샷 2023-07-05 오후 3 31 49" src="https://github.com/spostudio/alzwin_docs/assets/21987484/6e0d95aa-b75d-4e7c-a326-cea2b856e620">
+* ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/spostudio/alzwin_docs/assets/21987484/3aab6c4d-f4c2-46c3-adc2-89ed866b580f)
+* ᆼᆼᆼ
