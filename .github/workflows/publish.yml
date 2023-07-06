@@ -65,7 +65,7 @@ jobs:
     - name: Install dependencies
       run: npm install --frozen-lockfile
     - name: Test build website
-      run: npm build     
+      run: npm run build     
     - name: Create _build.json
       run: |
         commit=$(git rev-parse HEAD)
