@@ -1,0 +1,111 @@
+name: Publish Alzwin Docs
+
+on:
+  push:
+    tags:
+      - 'build-*'
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TEAMS_WEBHOOK: https://71548.webhook.office.com/webhookb2/869257e4-715d-47be-a3de-91c83d30171a@8166570b-4280-4dde-9ae6-47a5e487b6b5/IncomingWebhook/8103b299ea514cf0adc6e49562cf8fb0/15bd5b24-576e-4202-a154-4e293c29510e
+      S3_BUCKET_LIVE: 71-publish-alzwin-docs
+      S3_BUCKET_DEV: 71-publish-alzwin-docs-dev
+      S3_BUCKET_EDGE: 71-publish-alzwin-docs-edge
+      ACTIONS_LIVE: View,https://docs.alzwin.com
+      ACTIONS_DEV: View,https://docs-dev.alzwin.com
+      ACTIONS_EDGE: View,https://docs-edge.alzwin.com
+    steps:
+    - name: Notify Start
+      uses: spostudio/ms-teams-notification@v1.0.4
+      continue-on-error: true
+      with:
+        github-token: ${{ github.token }} # this will use the runner's token.
+        ms-teams-webhook-uri: ${{ env.TEAMS_WEBHOOK }}
+        notification-summary: '${{ github.workflow }} from ${{ github.ref }} Started'
+        notification-color: 17a2b8 # 17a2b8 info, 28a745 success, ffc107 warning, dc3545 error
+        timezone: Asia/Seoul
+    - name: Set Variables
+      run: |
+        ref_type="${GITHUB_REF_TYPE}"
+        ref_name="${GITHUB_REF_NAME}"
+        if [[ "$ref_type" == "branch" ]]; then
+          if [[ "$ref_name" == main ]]; then
+            S3_BUCKET="${{ env.S3_BUCKET_EDGE }}"
+            CUSTOM_ACTIONS="${{ env.ACTIONS_EDGE }}"
+          else
+            echo "Unknown branch: $ref_name"
+            exit 1
+          fi
+        elif [[ "$ref_name" == build-dev* ]]; then
+          S3_BUCKET="${{ env.S3_BUCKET_DEV }}"
+          CUSTOM_ACTIONS="${{ env.ACTIONS_DEV }}"
+        elif [[ "$ref_name" == build-live* ]]; then
+          S3_BUCKET="${{ env.S3_BUCKET_LIVE }}"
+          CUSTOM_ACTIONS="${{ env.ACTIONS_LIVE }}"
+        elif [[ "$ref_name" == build-edge* ]]; then
+          S3_BUCKET="${{ env.S3_BUCKET_EDGE }}"
+          CUSTOM_ACTIONS="${{ env.ACTIONS_EDGE }}"
+        else
+          echo "Unknown tag prefix: $tag_name"
+          exit 1
+        fi
+        echo "S3_BUCKET=$S3_BUCKET" >> $GITHUB_ENV
+        echo "CUSTOM_ACTIONS=$CUSTOM_ACTIONS" >> $GITHUB_ENV
+    # - name: Print All Env
+    #   run: |
+    #     env
+    - name: Checkout repository with submodules
+      uses: actions/checkout@v3
+      with:
+        submodules: 'recursive'
+        token: ${{ secrets.GH_TOKEN }}
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: yarn
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+    - name: Test build website
+      run: yarn build     
+    - name: Create _build.json
+      run: |
+        commit=$(git rev-parse HEAD)
+        date=$(date +%s000)
+        echo "{\"commit\": \"$commit\", \"date\": $date}" > "_build.json"
+      working-directory: build
+    - run: ls -al
+      working-directory: build
+    - name: Upload to S3
+      uses: jakejarvis/s3-sync-action@v0.5.1
+      with:
+        args: --acl public-read --follow-symlinks --delete
+      env:
+        AWS_S3_BUCKET: ${{ env.S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: 'ap-northeast-2'   # optional: defaults to us-east-1
+        SOURCE_DIR: build
+    - name: Notify Success
+      uses: spostudio/ms-teams-notification@v1.0.4
+      continue-on-error: true
+      if: success()
+      with:
+        github-token: ${{ github.token }} # this will use the runner's token.
+        ms-teams-webhook-uri: ${{ env.TEAMS_WEBHOOK }}
+        notification-summary: '${{ github.workflow }}  from ${{ github.ref }} Completed'
+        notification-color: 28a745 # 17a2b8 info, 28a745 success, ffc107 warning, dc3545 error
+        timezone: Asia/Seoul
+        custom-actions: ${{ env.CUSTOM_ACTIONS }}
+    - name: Notify Failure
+      uses: spostudio/ms-teams-notification@v1.0.4
+      continue-on-error: true
+      if: failure()
+      with:
+        github-token: ${{ github.token }} # this will use the runner's token.
+        ms-teams-webhook-uri: ${{ env.TEAMS_WEBHOOK }}
+        notification-summary: '${{ github.workflow }} from ${{ github.ref }} Failed'
+        notification-color: dc3545 # 17a2b8 info, 28a745 success, ffc107 warning, dc3545 error
+        timezone: Asia/Seoul
