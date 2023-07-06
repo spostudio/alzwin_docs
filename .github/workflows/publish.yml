@@ -59,9 +59,6 @@ jobs:
     #     env
     - name: Checkout repository with submodules
       uses: actions/checkout@v3
-      with:
-        submodules: 'recursive'
-        token: ${{ secrets.GH_TOKEN }}
     - uses: actions/setup-node@v3
       with:
         node-version: 18
