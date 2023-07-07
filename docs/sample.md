@@ -8,5 +8,5 @@ sidebar_position: 2
 ## Next Headline
 
 * spo
-* ![description here](/static/img/logo.svg)
+* ![description here](/img/logo.svg)
 * ᆼᆼᆼ
