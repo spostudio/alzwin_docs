@@ -4,4 +4,4 @@
 
 ![세븐포인트원 령도자 이현준 선생](/img/our_boss.jpg)![세븐포인트원 령도자 이현준 선생](/img/our_boss.jpg)
 
-![세븐포인트원 령도자 이현준 선생](/img/our_boss.jpg){: width="100" height="100"}
+![세븐포인트원 령도자 이현준 선생](/img/our_boss.jpg){: .featureSvg}
