@@ -14,6 +14,4 @@
     - 링크를 복사하거나 QR Code를 저장하여 검사를 진행할 사용자에게 전송하세요.
     - 생성된 링크와 QR Code는 일회성임으로 여러명에게 사용할 수 없습니다. 
 
-<img src="https://github.com/spostudio/alzwin_docs/assets/138735314/1e4dbaea-90ac-44e5-8385-f49b180985c9.png" width="30%"/><img src="https://github.com/spostudio/alzwin_docs/assets/138735314/a151623c-52d6-4cc8-ace4-0f4815a6d2c2" width="30%"/>  
-
-<img src="https://github.com/spostudio/alzwin_docs/blob/main/static/img/capture1.png" width="30%"/>  
+<img src="https://github.com/spostudio/alzwin_docs/blob/main/static/img/capture1.jpg" width="30%"/>  
