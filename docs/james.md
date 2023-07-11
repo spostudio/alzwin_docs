@@ -4,6 +4,6 @@
 
 ![세븐포인트원 령도자 이현준 선생](/img/our_boss.jpg)![세븐포인트원 령도자 이현준 선생](/img/our_boss.jpg)
 
-<img src="../static/img/our_boss" width="50" height="50"/>
-<img src="/img/our_boss" width="50" height="50"/>
-<img src="/static/img/our_boss" width="50" height="50"/>
+<img src="../static/img/our_boss.jpg" width="50" height="50"/>
+<img src="/static/img/our_boss.jpg" width="150" height="50"/>
+<img src="/static/img/our_boss.jpg" width="50" height="150"/>
