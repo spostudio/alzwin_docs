@@ -12,13 +12,13 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <h1 className="hero__title">{siteConfig.tagline}</h1>
+        <p className="hero__subtitle">{siteConfig.title}</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            5분 사용법 보기 ⏱️
+            문서 보기
           </Link>
         </div>
       </div>
@@ -32,6 +32,8 @@ export default function Home() {
     <Layout
       title={`${siteConfig.title}에 오신 것을 환영합니다`}
       description="알츠윈 문서">
+      <div className="introBackground">
+      </div>
       <HomepageHeader />
       <main>
         <HomepageFeatures />

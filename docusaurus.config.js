@@ -62,10 +62,10 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: '알츠윈 문서',
+        title: '',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/book.png',
+          src: 'img/alzwin_logo_signup.png',
         },
         items: [
           {
@@ -74,26 +74,26 @@ const config = {
             position: 'left',
             label: '문서',
           },
-          {to: '/blog', label: '블로그', position: 'left'},
+          // {to: '/blog', label: '블로그', position: 'left'},
           // {
           //   href: 'https://github.com/facebook/docusaurus',
           //   label: 'GitHub',
           //   position: 'right',
           // },
-          {
-            type: 'localeDropdown',
-            position: 'right',
-            dropdownItemsAfter: [
-              // {
-              //   type: 'html',
-              //   value: '<hr style="margin: 0.3rem 0;">',
-              // },
-              // {
-              //   href: 'https://alzwin.com',
-              //   label: 'Alzwin',
-              // },
-            ],
-          },
+          // {
+          //   type: 'localeDropdown',
+          //   position: 'right',
+          //   dropdownItemsAfter: [
+          //     // {
+          //     //   type: 'html',
+          //     //   value: '<hr style="margin: 0.3rem 0;">',
+          //     // },
+          //     // {
+          //     //   href: 'https://alzwin.com',
+          //     //   label: 'Alzwin',
+          //     // },
+          //   ],
+          // },
         ],
       },
       footer: {
@@ -121,15 +121,15 @@ const config = {
               },
             ],
           },
-          {
-            title: '그외',
-            items: [
-              {
-                label: '블로그',
-                to: '/blog',
-              },
-            ],
-          },
+          // {
+          //   title: '그외',
+          //   items: [
+          //     {
+          //       label: '블로그',
+          //       to: '/blog',
+          //     },
+          //   ],
+          // },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} SevenPointOne.`,
       },
