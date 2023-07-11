@@ -104,7 +104,7 @@ const config = {
             items: [
               {
                 label: '소개',
-                to: '/docs/intro',
+                to: '/docs/introduce',
               },
             ],
           },
