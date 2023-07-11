@@ -2,6 +2,8 @@
 위대한 령도자 이현준 동지의 지도 아래에  
 산업을 일으키는 력군이 되자
 
-![세븐포인트원 령도자 이현준 선생](/img/our_boss.jpg)
+![세븐포인트원 령도자 이현준 선생](/img/our_boss.jpg)![세븐포인트원 령도자 이현준 선생](/img/our_boss.jpg)
 
- 
+<img src="https://github.com/spostudio/alzwin_docs/blob/main/static/img/our_boss.jpg" width="50" height="50"/>
+<img src="https://github.com/spostudio/alzwin_docs/blob/main/static/img/our_boss.jpg" width="150" height="50"/>
+<img src="https://github.com/spostudio/alzwin_docs/blob/main/static/img/our_boss.jpg" width="50" height="150"/>
