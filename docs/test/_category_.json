@@ -1,0 +1,8 @@
+{
+  "label": "Test",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "문서화 시스템을 어떻게 사용하는지 설명합니다"
+  }
+}
