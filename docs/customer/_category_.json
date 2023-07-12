@@ -4,6 +4,6 @@
   "collapsible": true,
   "link": {
     "type": "generated-index",
-    "description": "문서화 시스템을 어떻게 사용하는지 설명합니다"
+    "description": "고객을 등록하고 관리합니다. 알츠윈 서비스를 등록된 고객 다수에게 제공합니다."
   }
 }
