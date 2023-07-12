@@ -30,7 +30,40 @@ sidebar_position: 2
 
 <img
   src="/img/capture1.jpg"
-  width="50"
-  height="100"
+  width="150"
+  height="200"
+  alt="capture1"
+/>
+<img
+  src="/img/capture1.jpg"
+  width="150"
+  height="200"
+  alt="capture1"
+/>
+<img
+  src="/img/capture1.jpg"
+  width="150"
+  height="200"
+  alt="capture1"
+/>
+
+#
+
+<img
+  src="/img/capture1.jpg"
+  width="150"
+  height="200"
+  alt="capture1"
+/>
+<img
+  src="/img/capture1.jpg"
+  width="150"
+  height="200"
+  alt="capture1"
+/>
+<img
+  src="/img/capture1.jpg"
+  width="150"
+  height="200"
   alt="capture1"
 />
