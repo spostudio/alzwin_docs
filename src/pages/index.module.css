@@ -13,11 +13,6 @@
   /* background: linear-gradient(#E8F7F8,100%, white); */
 }
 
-.introBackground {
-  /* background: linear-gradient(#E8F7F8, 65%, white); */
-  background: linear-gradient(#E8F7F8,100%, white);
-}
-
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;

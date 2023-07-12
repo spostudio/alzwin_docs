@@ -32,8 +32,6 @@ export default function Home() {
     <Layout
       title={`${siteConfig.title}에 오신 것을 환영합니다`}
       description="알츠윈 문서">
-      <div className="introBackground">
-      </div>
       <HomepageHeader />
       <main>
         <HomepageFeatures />
