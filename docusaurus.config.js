@@ -1,44 +1,44 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '알츠윈 문서',
-  tagline: '가장 쉬운 대중 인지 건강 관리',
-  favicon: 'img/favicon.ico',
+  title: "알츠윈 문서",
+  tagline: "가장 쉬운 대중 인지 건강 관리",
+  favicon: "img/favicon.png",
 
   // Set the production url of your site here
-  url: 'https://docs.alzwin.com',
+  url: "https://docs.alzwin.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'spostudio', // Usually your GitHub org/user name.
-  projectName: 'alzwin_docs', // Usually your repo name.
+  organizationName: "spostudio", // Usually your GitHub org/user name.
+  projectName: "alzwin_docs", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'ko',
-    locales: ['en','ko'],
+    defaultLocale: "ko",
+    locales: ["en", "ko"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
@@ -50,7 +50,7 @@ const config = {
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -60,19 +60,24 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      // image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        defaultMode: "light",
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
       navbar: {
-        title: '',
+        title: "",
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/alzwin_logo_signup.png',
+          alt: "My Site Logo",
+          src: "img/alzwin_logo_signup.png",
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: '문서',
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "left",
+            label: "문서",
           },
           // {to: '/blog', label: '블로그', position: 'left'},
           // {
@@ -97,27 +102,33 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        logo: {
+          href: "/",
+          src: "/img/alzwin_logo_header.png",
+          srcDark: "/img/alzwin_logo_header.png",
+          alt: "AlzWIN",
+          // height: '36px',
+        },
         links: [
           {
-            title: '문서',
+            title: "문서",
             items: [
               {
-                label: '소개',
-                to: '/docs/introduce',
+                label: "소개",
+                to: "/docs/introduce",
               },
             ],
           },
           {
-            title: '링크',
+            title: "링크",
             items: [
               {
-                label: '알츠윈',
-                href: 'https://alzwin.com',
+                label: "알츠윈",
+                href: "https://alzwin.com",
               },
               {
-                label: '세븐포인트원',
-                href: 'https://sevenptone.com',
+                label: "세븐포인트원",
+                href: "https://sevenptone.com",
               },
             ],
           },

@@ -1,23 +1,25 @@
-import React from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import React from "react";
+import clsx from "clsx";
+import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
+import HomepageFeatures from "@site/src/components/HomepageFeatures";
 
-import styles from './index.module.css';
+import styles from "./index.module.css";
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
+        <img src="/img/alzwin_logo_signup.png" alt="AlzWIN logo" />
         <h1 className="hero__title">{siteConfig.tagline}</h1>
-        <p className="hero__subtitle">{siteConfig.title}</p>
+        {/* <p className="hero__subtitle">{siteConfig.title}</p> */}
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/introduce">
+            to="/docs/introduce"
+          >
             문서 보기
           </Link>
         </div>
@@ -27,11 +29,12 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`${siteConfig.title}에 오신 것을 환영합니다`}
-      description="알츠윈 문서">
+      description="알츠윈 문서"
+    >
       <HomepageHeader />
       <main>
         <HomepageFeatures />
