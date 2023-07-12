@@ -25,13 +25,6 @@ sidebar_position: 2
     - 생성된 링크와 QR Code는 일회성임으로 여러명에게 사용할 수 없습니다. 
 
 <img
-  src="/static/img/capture1.jpg"
-  width="100"
-  height="50"
-  alt="capture1"
-/>
-
-<img
   src="/img/capture1.jpg"
   width="50"
   height="100"
