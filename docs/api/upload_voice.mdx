@@ -1,0 +1,105 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# 음성 업로드
+
+음성 파일을 업로드합니다. AlzWIN 테스트 결과가 반환됩니다.
+
+## PUTTTT
+
+PUT  
+/bogunso/call/upload  
+HTTP/1.1  
+Host: api.alzwin.com
+
+## 요청
+
+헤더에 키 'x-body'를 추가하고 값으로 json 형식의 string 데이터를 넣습니다.  
+음성파일은 binary로 첨부합니다.
+
+### 요청 프로퍼티
+
+| 이름                       | 설명                                                      |                            |
+| -------------------------- | --------------------------------------------------------- | -------------------------- |
+| ticket `string`            | 발급 받은 ticket                                          | 필수                       |
+| customerId `string`        | 고객의 ID                                                 | profile이 null이면 필수    |
+| profile `object`           | 테스트 받는 사람                                          | customerId가 null이면 필수 |
+| birthyear `number`         | 생년 (4자리)                                              | age가 null이면 필수        |
+| age `number`               | 나이                                                      | birthyear가 null이면 필수  |
+| gender `string`            | 성별 'male' 또는 'female'                                 | 필수                       |
+| lang `string`              | 검사 언어 코드 'en', 'ko', 'zh-CN', 'ja', ... (추가 예정) | 필수                       |
+| tag `string`               | tag 정보                                                  |                            |
+| ext `string`               | 음성파일 확장자. 'wav', 'ogg', 'aac', 'ac3', 'mp3'        | 필수                       |
+| requestManualTyping `bool` | 음성 파일의 내용을 입력할지 여부. null이면 기본 false     |                            |
+
+### 요청 예
+
+<Tabs>
+  <TabItem value="case1" label="Case 1" default>
+
+```json
+// customerId 사용
+{
+  "ticket": "RjlFrC1r6H",
+  "customerId": "fpTqo36jviI",
+  "profile": {
+    "birthyear": 1949,
+    "age": 77,
+    "gender": "male"
+  },
+  "lang": "en",
+  "tag": "lorem ipsum",
+  "ext": "ogg",
+  "requestManualTyping": false
+}
+```
+
+  </TabItem>
+  <TabItem value="case2" label="Case 2">
+
+```json
+// profile 사용
+{
+  "ticket": "RjlFrC1r6H",
+  "customerId": "fpTqo36jviI",
+  "profile": {
+    "birthyear": 1949,
+    "age": 77,
+    "gender": "male"
+  },
+  "lang": "en",
+  "tag": "lorem ipsum",
+  "ext": "ogg",
+  "requestManualTyping": false
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## 응답
+
+응답에 성공하면 JSON 형식의 데이터가 반환됩니다.
+
+### 응답 프로퍼티
+
+| 이름                   | 설명                                                  |      |
+| ---------------------- | ----------------------------------------------------- | ---- |
+| e `string`             | 음성 파일의 내용을 입력할지 여부. null이면 기본 false |      |
+| msg `string`           | 오류 원인의 참고 자료. 오류 발생 시 반환될 수 있음    |      |
+| v `object`             | json형식의 검사 결과                                  |      |
+| tempScore `number`     | STT 기반의 부정확한 임시 점수                         | 필수 |
+| bogunsoCallId `string` | 알츠윈 검사 ID                                        | 필수 |
+
+### 응답 예
+
+```json
+{
+  "e": "invalid",
+  "msg": "lang must be specified",
+  "v": {
+    "bogunsoCallId": "644109f9db9de",
+    "tempScore": 43.41
+  }
+}
+```
