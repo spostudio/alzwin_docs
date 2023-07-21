@@ -75,19 +75,27 @@ const config = {
         items: [
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            sidebarId: "guideSidebar",
             position: "left",
             label: "문서",
           },
-          // {to: '/blog', label: '블로그', position: 'left'},
+          {
+            type: "docSidebar",
+            sidebarId: "apiSidebar",
+            to: "/api",
+            label: "API",
+            // position: "left",
+            // activeBaseRegex: "^(/[^/]+)?/api/.*",
+          },
+          // { to: "/blog", label: "블로그", position: "left" },
           // {
-          //   href: 'https://github.com/facebook/docusaurus',
-          //   label: 'GitHub',
-          //   position: 'right',
+          //   href: "https://github.com/facebook/docusaurus",
+          //   label: "GitHub",
+          //   position: "right",
           // },
           // {
-          //   type: 'localeDropdown',
-          //   position: 'right',
+          //   type: "localeDropdown",
+          //   position: "right",
           //   dropdownItemsAfter: [
           //     // {
           //     //   type: 'html',
@@ -115,7 +123,11 @@ const config = {
             items: [
               {
                 label: "소개",
-                to: "/docs/introduce",
+                to: "/docs/guide/introduce",
+              },
+              {
+                label: "API",
+                to: "/docs/api/introduce",
               },
             ],
           },

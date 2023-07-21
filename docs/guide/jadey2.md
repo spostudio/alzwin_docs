@@ -1,4 +1,5 @@
 ---
+displayed_sidebar: guideSidebar
 sidebar_position: 5
 sidebar_label: "제이디 작업"
 ---

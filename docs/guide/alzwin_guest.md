@@ -1,4 +1,5 @@
 ---
+displayed_sidebar: guideSidebar
 sidebar_label: "비회원 검사"
 sidebar_position: 2
 ---
