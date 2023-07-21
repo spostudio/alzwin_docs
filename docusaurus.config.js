@@ -29,7 +29,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "ko",
-    locales: ["en", "ko"],
+    locales: ["ko", "en"],
   },
 
   presets: [
@@ -93,20 +93,20 @@ const config = {
           //   label: "GitHub",
           //   position: "right",
           // },
-          // {
-          //   type: "localeDropdown",
-          //   position: "right",
-          //   dropdownItemsAfter: [
-          //     // {
-          //     //   type: 'html',
-          //     //   value: '<hr style="margin: 0.3rem 0;">',
-          //     // },
-          //     // {
-          //     //   href: 'https://alzwin.com',
-          //     //   label: 'Alzwin',
-          //     // },
-          //   ],
-          // },
+          {
+            type: "localeDropdown",
+            position: "right",
+            dropdownItemsAfter: [
+              // {
+              //   type: 'html',
+              //   value: '<hr style="margin: 0.3rem 0;">',
+              // },
+              // {
+              //   href: 'https://alzwin.com',
+              //   label: 'Alzwin',
+              // },
+            ],
+          },
         ],
       },
       footer: {

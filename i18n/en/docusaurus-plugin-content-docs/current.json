@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.guideSidebar.category.고객": {
+    "message": "Customer",
+    "description": "The label for category 고객 in sidebar guideSidebar"
+  }
+}

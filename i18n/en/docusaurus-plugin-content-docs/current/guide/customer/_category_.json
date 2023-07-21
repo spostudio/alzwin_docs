@@ -1,0 +1,9 @@
+{
+  "label": "고객",
+  "position": 3,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "고객을 등록하고 관리합니다. 알츠윈 서비스를 등록된 고객 다수에게 제공합니다."
+  }
+}
