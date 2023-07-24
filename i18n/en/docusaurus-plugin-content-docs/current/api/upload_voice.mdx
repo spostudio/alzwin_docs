@@ -1,0 +1,128 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Upload voice
+
+<pre>
+  <span
+    style={{
+      color: "#F8F8F8",
+      backgroundColor: "#AB5CFF",
+      borderRadius: "0.2rem",
+      padding: "0.2rem",
+      marginRight: "0.6rem",
+    }}
+  >
+    PUT
+  </span>
+  <span style={{ color: "#1c1c1c" }}>/bogunso/call/upload</span>
+  <span style={{ color: "#969696", marginLeft: "2rem" }}>HTTP/1.1</span>
+  <br />
+  <span style={{ color: "#969696", marginRight: "1rem" }}>
+    Host: api.alzwin.com
+  </span>
+</pre>
+
+Upload the voice file. The AlzWIN test results are returned.
+
+## Request
+
+Add the key 'x-body' to the header and put the string data in json format as the value.  
+Attach the audio file as a binary.
+
+### Request Property
+
+| Name                                                                     | Tip                                                                       |                                |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------- | ------------------------------ |
+| **ticket**<br /><sub style={{ color: "grey" }}>`string`</sub>            | Issued ticket                                                             | Required                       |
+| **customerId**<br /><sub style={{ color: "grey" }}>`string`</sub>        | Customer's ID                                                             | Required if profile is null    |
+| **profile**<br /><sub style={{ color: "grey" }}>`object`</sub>           | Who is being tested                                                       | Required if customerId is null |
+| **birthyear**<br /><sub style={{ color: "grey" }}>`number`</sub>         | Birth Year (4 digits)                                                     | Required if age is null        |
+| **age**<br /><sub style={{ color: "grey" }}>`number`</sub>               | Age                                                                       | Required if birthyear is null  |
+| **gender**<br /><sub style={{ color: "grey" }}>`string`</sub>            | Sex<br />'male' or 'female'                                               | Required                       |
+| **lang**<br /><sub style={{ color: "grey" }}>`string`</sub>              | Test language code<br />'en', 'ko', 'zh-CN', 'ja', ... (more to come)     | Required                       |
+| **tag**<br /><sub style={{ color: "grey" }}>`string`</sub>               | About tags                                                                |                                |
+| **ext**<br /><sub style={{ color: "grey" }}>`string`</sub>               | Audio File Extensions<br />'wav', 'ogg', 'aac', 'ac3', 'mp3'              | Required                       |
+| **requestManualTyping**<br /><sub style={{ color: "grey" }}>`bool`</sub> | Whether to type the contents of the voice file<br />Default false if null |                                |
+
+### Request Example
+
+<Tabs>
+  <TabItem value="case1" label="Case 1" default>
+
+```json
+// customerId uesd
+{
+  "ticket": "RjlFrC1r6H",
+  "customerId": "fpTqo36jviI",
+  "lang": "en",
+  "tag": "lorem ipsum",
+  "ext": "ogg",
+  "requestManualTyping": false
+}
+```
+
+  </TabItem>
+  <TabItem value="case2" label="Case 2">
+
+```json
+// profile used
+{
+  "ticket": "RjlFrC1r6H",
+  "profile": {
+    "birthyear": 1949, // Required if age is null
+    // "age": 77, // Required if birthyear is null
+    "gender": "male"
+  },
+  "lang": "en",
+  "tag": "lorem ipsum",
+  "ext": "ogg",
+  "requestManualTyping": false
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## Response
+
+A successful response will return data in JSON format.
+
+### Response Property
+
+| Name                                                                 | Tip                                                       |          |
+| -------------------------------------------------------------------- | --------------------------------------------------------- | -------- |
+| **e**<br /><sub style={{ color: "grey" }}>`string` </sub>            | Error Information<br />null if no error                   |          |
+| **msg**<br /><sub style={{ color: "grey" }}>`string`</sub>           | References for Error Causes<br />May be returned on error |          |
+| **v**<br /><sub style={{ color: "grey" }}>`object` </sub>            | Test results in JSON format                               |          |
+| **tempScore**<br /><sub style={{ color: "grey" }}>`number` </sub>    | Inaccurate temporary score based on STT                   | Required |
+| **bogunsoCallId**<br /><sub style={{ color: "grey" }}>`string`</sub> | AlzWIN Test ID                                            | Required |
+
+### Response Example
+
+<Tabs>
+  <TabItem value="case1" label="Case 1" default>
+
+```json
+// success
+{
+  "v": {
+    "bogunsoCallId": "644109f9db9de",
+    "tempScore": 43.41
+  }
+}
+```
+
+  </TabItem>
+  <TabItem value="case2" label="Case 2">
+
+```json
+// failure
+{
+  "e": "invalid",
+  "msg": "lang must be specified"
+}
+```
+
+  </TabItem>
+</Tabs>

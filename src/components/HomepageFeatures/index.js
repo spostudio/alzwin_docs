@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 const FeatureList = [
   {
@@ -17,6 +18,29 @@ const FeatureList = [
     title: "특허",
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: <>병원 방문없이 관리 받는 솔루션</>,
+  },
+];
+
+const FeatureList_en = [
+  {
+    title: "Easy to use",
+    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    description: <>Add a customer and test in under a minute</>,
+  },
+  {
+    title: "Accuracy",
+    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    description: (
+      <>
+        Based on technology developed over 10 years by Korea's top dementia
+        researchers
+      </>
+    ),
+  },
+  {
+    title: "Patents",
+    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    description: <>Managed care solutions without a doctor's visit</>,
   },
 ];
 
@@ -44,11 +68,23 @@ function Feature({ Svg, title, description }) {
 }
 
 export default function HomepageFeatures() {
+  const { i18n } = useDocusaurusContext();
+  console.log(i18n.currentLocale); // e.g. 'en'
+
+  var eee;
+  if (i18n.currentLocale === "ko") {
+    eee = FeatureList;
+  } else if (i18n.currentLocale === "en") {
+    eee = FeatureList_en;
+  } else {
+    eee = FeatureList;
+  }
+
   return (
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {FeatureList.map((props, idx) => (
+          {eee.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
         </div>

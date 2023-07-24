@@ -8,19 +8,31 @@ import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import styles from "./index.module.css";
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
+  // const { siteConfig, i18n } = useDocusaurusContext();
+  const { i18n } = useDocusaurusContext();
+
+  var baseURl = "/";
+  var tagLine = "가장 쉬운 대중 인지 건강 관리";
+  var buttonTitle = "문서 보기";
+  if (i18n.currentLocale === "ko") {
+    // do nothing
+  } else {
+    baseURl += i18n.currentLocale + "/";
+    tagLine = "The easiest public awareness healthcare";
+    buttonTitle = "Get Started";
+  }
+
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <img src="/img/alzwin_logo_signup.png" alt="AlzWIN logo" />
-        <h1 className="hero__title">{siteConfig.tagline}</h1>
-        {/* <p className="hero__subtitle">{siteConfig.title}</p> */}
+        <img src={`${baseURl}img/alzwin_logo_signup.png`} alt="AlzWIN logo" />
+        <h1 className="hero__title">{tagLine}</h1>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/guide/introduce"
           >
-            문서 보기
+            {buttonTitle}
           </Link>
         </div>
       </div>
@@ -29,11 +41,23 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+  const { i18n } = useDocusaurusContext();
+
+  var title = "알츠윈 문서에 오신 것을 환영합니다";
+  var description = "알츠윈 문서";
+  if (i18n.currentLocale === "ko") {
+    // do nothing
+  } else {
+    title = "Welcome to AlzWIN Documentation";
+    description = "AlzWIN Docs";
+  }
+
   return (
     <Layout
-      title={`${siteConfig.title}에 오신 것을 환영합니다`}
-      description="알츠윈 문서"
+      // title={`${siteConfig.title}에 오신 것을 환영합니다`}
+      // description="알츠윈 문서"
+      title={title}
+      description={description}
     >
       <HomepageHeader />
       <main>
