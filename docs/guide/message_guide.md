@@ -1,3 +1,9 @@
+---
+displayed_sidebar: guideSidebar
+sidebar_label: "문자 양식"
+sidebar_position: 7
+---  
+
 # 문자 보내기
 
 고객들에게 사전 안내 문자 혹은 공지 문자 등을 보낼 수 있습니다.
