@@ -8,7 +8,8 @@ sidebar_position: 2
 
 고객으로 등록하지 않아도 비회원 검사를 할 수 있습니다. 실시간 **대면 검사**에 사용합니다.
 
-## 언어
+<span style='background-color: #fff5b1'>안녕</span>  
+
 
 알츠윈 검사 시 사용할 언어를 선택합니다.
 
