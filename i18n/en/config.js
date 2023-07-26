@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "AlzWIN Docs",
-  tagline: "가장 쉬운 대중 인지 건강 관리",
+  tagline: "AlzWIN",
   favicon: "img/favicon.png",
 
   // Set the production url of your site here
