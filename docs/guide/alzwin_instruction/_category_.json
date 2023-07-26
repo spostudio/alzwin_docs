@@ -1,0 +1,9 @@
+{
+  "label": "알츠윈 검사 진행방법",
+  "position": 8,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "알츠윈 검사를 진행할 수 있는 여러가지의 방법을 안내합니다."
+  }
+}
