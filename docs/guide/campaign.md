@@ -1,7 +1,7 @@
 ---
 displayed_sidebar: guideSidebar
 sidebar_label: "캠페인"
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # 캠페인
