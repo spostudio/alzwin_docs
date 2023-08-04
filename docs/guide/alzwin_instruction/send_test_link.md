@@ -3,10 +3,8 @@
 고객들에게 검사를 진행할 수 있는 링크를 전송합니다. 검사 링크는 문자로 전송이 가능합니다.  
 
 <img
-src="/img/capture1.jpg"
-width="150"
-height="200"
-alt="capture1"
+src="/static/img/send_test_link.jpg"
+alt="send_test_link"
 />
 
 ### 진행 방법
