@@ -6,7 +6,15 @@ sidebar_position: 3
 
 # 공개 검사 링크 
 
-생성된 하나의 링크로 여러명이 접속하여 알츠윈 검사를 진행할 수 있습니다. 추가를 눌러 링크를 생성할 수 있습니다. 
+생성된 하나의 링크로 여러명이 접속하여 알츠윈 검사를 진행할 수 있습니다. 추가를 눌러 링크를 생성할 수 있습니다.  
+
+<img
+  src="/img/alzwin_public_testlink.jpg"
+  width="700"
+  height="550"
+  alt="alzwin_public_testlink"
+/>  
+
 
 ### 제목  
 
