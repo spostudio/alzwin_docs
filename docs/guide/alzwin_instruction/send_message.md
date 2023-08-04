@@ -1,5 +1,9 @@
-
 # 문자 보내기 
+
+<img
+src="/img/send_message.jpg"
+alt="send_message"
+/>
 
 1. 고객 목록에서 문자를 보낼 고객을 선택합니다.
 2. **[문자 전송]** 를 눌러 창을 엽니다.
