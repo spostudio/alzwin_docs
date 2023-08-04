@@ -7,6 +7,7 @@ sidebar_position: 2
 # 비회원 검사
 비회원 검사는 검사 대상자를 고객으로 등록하지 않아도 검사를 할 수 있습니다. 실시간 **대면 검사**에 사용합니다.
 
+![alzwin quest description](/img/alzwin_guest.jpg)  
 
 ### 언어 
 알츠윈 검사 시 사용할 언어를 선택합니다.  
