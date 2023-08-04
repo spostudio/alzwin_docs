@@ -10,8 +10,6 @@ sidebar_position: 3
 
 <img
   src="/img/alzwin_public_testlink.jpg"
-  width="700"
-  height="550"
   alt="alzwin_public_testlink"
 />  
 
