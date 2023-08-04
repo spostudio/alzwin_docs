@@ -8,7 +8,7 @@ sidebar_position: 6
 검사를 진행한 검사 대상자의 정보를 확인할 수 있으며, 데이터를 엑셀로 저장할 수 있습니다.   
 
 <img
-  src="/static/img/call_test.jpg"
+  src="/img/call_test.jpg"
   alt="call_test"
 />
 
