@@ -2,6 +2,12 @@
 
 고객들에게 전화를 걸어 알츠윈 검사 및 개인정보동의 AI Call을 진행합니다.
 
+<img
+src="/static/img/customer_4.jpg"
+alt="customer_4"
+/>
+
+
 ### 진행 방법
 
 1. 고객 목록에서 고객을 선택합니다.
