@@ -9,6 +9,11 @@ sidebar_position: 4
 고객을 등록하여 캠페인을 생성할 수 있습니다.  
 고객으로 등록하면 다수에게 AI Call, 검사 링크, 문자를 보낼 수 있습니다.  
 
+<img
+  src="/img/customer_1.jpg"
+  alt="customer_1"
+/>
+
 ### 고객 등록 
 
 1. **[고객 등록]** 을 눌러 창을 엽니다.  
