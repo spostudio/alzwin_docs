@@ -6,5 +6,13 @@
   "sidebar.guideSidebar.category.고객": {
     "message": "Customer",
     "description": "The label for category 고객 in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.알츠윈 검사 진행방법": {
+    "message": "알츠윈 검사 진행방법",
+    "description": "The label for category 알츠윈 검사 진행방법 in sidebar guideSidebar"
+  },
+  "sidebar.guideSidebar.category.알츠윈 검사 진행방법.link.generated-index.description": {
+    "message": "알츠윈 검사를 진행할 수 있는 여러가지의 방법을 안내합니다.",
+    "description": "The generated-index page description for category 알츠윈 검사 진행방법 in sidebar guideSidebar"
   }
 }
